@@ -31,6 +31,7 @@ class Ghost():
         self.direction_cooldown = 0
         self.direction_cooldown_time = 2
         self.persistence_time = 7
+        self.dead = False
         self.in_corner = False
         self.going_to_corner = False
 

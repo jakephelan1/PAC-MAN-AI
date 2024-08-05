@@ -43,7 +43,7 @@ def dijkstra(graph, start, end):
     return None
 
 class game_info():
-    def __init__(self, pacman, pacman_pos, g_coords, speed, pacman_direction, ghost_directions, pacman_moves, state, map, powerup_pos, points, points_g, graph, init_time, final_time):
+    def __init__(self, pacman, pacman_pos, g_coords, speed, pacman_direction, ghost_directions, pacman_moves, state, map, powerup_pos, points, graph, init_time, final_time):
         self.pacman = pacman
         self.pacman_pos = pacman_pos
         self.g_coords = g_coords
@@ -55,7 +55,6 @@ class game_info():
         self.map = map
         self.powerup_pos = powerup_pos
         self.points = points
-        self.points_g = points_g
         self.graph = graph
         self.init_time = init_time
         self.final_time = final_time
@@ -99,9 +98,8 @@ class pacman_game:
         self.respawn_time = 0
         self.initialize_ghosts(num_ghosts)
         self.init_time = -900000000
-        self.final_time = 2000
+        self.final_time = 1500
         self.complete_lvl = False
-        self.gPoints = 0
         self.info = None
 
     def initialize_ghosts(self, numGhosts=0):
@@ -288,25 +286,19 @@ class pacman_game:
         collide = False
         g = None
         for i in range(len(self.ghost_rects)):
-            if self.ghost_rects[i].colliderect(self.pacman_rect):
+            if self.ghost_rects[i].colliderect(self.pacman_rect) and not self.ghosts[i].dead:
                 collide = True
                 g = self.ghosts[i]
                 break
         if collide and self.pacman_alive and not self.pacman.get_state():
             self.pressed_keys.clear()
             self.pacman_alive = False
-            self.gPoints += 200
             for ghost in self.ghosts:
                 ghost.set_direction(-1)
             self.respawn_time = pygame.time.get_ticks()
         elif collide and self.pacman_alive and self.pacman.get_state():
-            pygame.time.wait(500)
-            self.final_time += 500
             self.points += 50
-            self.gPoints -= 50
-            g.set_x(random.randrange(12*self.num2, 17*self.num2))
-            g.set_y(random.randrange(14*self.num2, (16*self.num2) - 30))
-            g.out_of_box = False
+            g.dead = True
 
     def blink_points(self):
         if self.counter < 20:
@@ -365,35 +357,18 @@ class pacman_game:
             current_pos = ((ghost.get_x() + 16) // self.num2, (ghost.get_y() + 16) // self.num1)
             self.check_available_moves_g(ghost, ghost.get_x() + 16, ghost.get_y() + 16)
 
-            if ghost.direction_cooldown <= 0 and ghost.at_intersection():
-                if self.pacman.powered_up:
-                    path = self.get_shortest_path(ghost, fleeing=True)
+            if ghost.dead:
+                path = None
+                if current_pos == (15, 12):
+                    ghost.set_x(random.randrange(12*self.num2, 17*self.num2))
+                    ghost.set_y(random.randrange(14*self.num2, (16*self.num2) - 30))
+                    ghost.image.set_alpha(256)
+                    ghost.dead = False
+                    ghost.out_of_box = False
                 else:
-                    if ghost.name == "Clyde":
-                        pacman_pos = ((self.pacman.get_x() + 18) // self.num2, (self.pacman.get_y() + 18) // self.num1)
-                        distance = abs(current_pos[0] - pacman_pos[0]) + abs(current_pos[1] - pacman_pos[1])
-                        ghost.in_corner = current_pos == (2, 30)
-
-                        if ghost.going_to_corner == False and ghost.in_corner == False:
-                            if distance <= 8 and not ghost.in_corner:
-                                ghost.going_to_corner = True
-                            else:
-                                ghost.going_to_corner = False
-
-                        elif ghost.in_corner:
-                            ghost.going_to_corner = False
-
-                        if ghost.going_to_corner:
-                            path = self.get_shortest_path(ghost, end=(2, 30))
-                        else:
-                            path = self.get_shortest_path(ghost)
-
-                    elif ghost.name == "Blinky":
-                        path = self.get_shortest_path(ghost)
-                    elif ghost.name == "Pinky":
-                        path = self.get_shortest_path(ghost, track_ahead=True)
-                    elif ghost.name == "Inky":
-                        path = self.get_inky_path(ghost)
+                    if ghost.image.get_alpha() != 100:
+                        ghost.image.set_alpha(100)
+                    path = self.get_shortest_path(ghost, end=(15, 12))
 
                 if path and len(path) > 1:
                     nextPos = path[1]
@@ -414,23 +389,74 @@ class pacman_game:
                     if not self.in_tp_zone(ghost):
                         if ghost.target_direction != ghost.get_direction():
                             ghost.set_direction(ghost.target_direction)
-                            ghost.direction_cooldown = ghost.direction_cooldown_time
-                            ghost.persistence_time = 30
+
             else:
-                ghost.direction_cooldown -= 1
-                ghost.persistence_time -= 1
+                if (ghost.direction_cooldown <= 0 and ghost.at_intersection()):
+                    if self.pacman.powered_up:
+                        path = self.get_shortest_path(ghost, fleeing=True)
+                    else:
+                        if ghost.name == "Clyde":
+                            pacman_pos = ((self.pacman.get_x() + 18) // self.num2, (self.pacman.get_y() + 18) // self.num1)
+                            distance = abs(current_pos[0] - pacman_pos[0]) + abs(current_pos[1] - pacman_pos[1])
+                            ghost.in_corner = current_pos == (2, 30)
 
-            if not self.in_tp_zone(ghost):
-                if ghost.persistence_time <= 0 and random.random() < 0.1:
-                    new_direction = random.choice(list(ghost.moves - {ghost.get_direction()}))
-                    ghost.set_direction(new_direction)
-                    ghost.persistence_time = 30
+                            if ghost.going_to_corner == False and ghost.in_corner == False:
+                                if distance <= 8 and not ghost.in_corner:
+                                    ghost.going_to_corner = True
+                                else:
+                                    ghost.going_to_corner = False
 
-                if ghost.get_direction() not in ghost.moves and ghost.out_of_box:
-                    new_direction = random.choice(list(ghost.moves))
-                    ghost.set_direction(new_direction)
+                            elif ghost.in_corner:
+                                ghost.going_to_corner = False
 
-            positions[ghost] = current_pos
+                            if ghost.going_to_corner:
+                                path = self.get_shortest_path(ghost, end=(2, 30))
+                            else:
+                                path = self.get_shortest_path(ghost)
+
+                        elif ghost.name == "Blinky":
+                            path = self.get_shortest_path(ghost)
+                        elif ghost.name == "Pinky":
+                            path = self.get_shortest_path(ghost, track_ahead=True)
+                        elif ghost.name == "Inky":
+                            path = self.get_inky_path(ghost)
+
+                    if path and len(path) > 1:
+                        nextPos = path[1]
+                        dx = nextPos[0] - current_pos[0]
+                        dy = nextPos[1] - current_pos[1]
+
+                        if dx > 0 and 0 in ghost.moves:
+                            ghost.target_direction = 0
+                        elif dx < 0 and 1 in ghost.moves:
+                            ghost.target_direction = 1
+                        elif dy < 0 and 2 in ghost.moves:
+                            ghost.target_direction = 2
+                        elif dy > 0 and 3 in ghost.moves:
+                            ghost.target_direction = 3
+                        else:
+                            ghost.target_direction = random.choice(list(ghost.moves))
+
+                        if not self.in_tp_zone(ghost):
+                            if ghost.target_direction != ghost.get_direction():
+                                ghost.set_direction(ghost.target_direction)
+                                ghost.direction_cooldown = ghost.direction_cooldown_time
+                                ghost.persistence_time = 30
+                else:
+                    ghost.direction_cooldown -= 1
+                    ghost.persistence_time -= 1
+
+                if not self.in_tp_zone(ghost):
+                    if ghost.persistence_time <= 0 and random.random() < 0.1:
+                        new_direction = random.choice(list(ghost.moves - {ghost.get_direction()}))
+                        ghost.set_direction(new_direction)
+                        ghost.persistence_time = 30
+
+                    if ghost.get_direction() not in ghost.moves and ghost.out_of_box:
+                        new_direction = random.choice(list(ghost.moves))
+                        ghost.set_direction(new_direction)
+
+                positions[ghost] = current_pos
 
         collisions = set()
         for ghost1, pos1 in positions.items():
@@ -628,7 +654,10 @@ class pacman_game:
                 elif ghost.get_direction() == 3:
                     ghost.set_y(ghost.get_y() + G_SPEED)
 
-            g_coords[ghost] = (ghost.get_x() + 16, ghost.get_y() + 16)
+            if not ghost.dead:
+                g_coords[ghost] = (ghost.get_x() + 16, ghost.get_y() + 16)
+            elif ghost.dead and ghost in g_coords:
+                g_coords.pop(ghost)
 
         return g_coords
 
@@ -688,13 +717,13 @@ class pacman_game:
         info = game_info(self.pacman, center_point, g_coords, SPEED,
                              self.pacman.get_direction(), ghost_directions,
                              self.pacman.moves, self.pacman.get_state(),
-                             self.level, powerup_pos, self.points, self.gPoints,
+                             self.level, powerup_pos, self.points,
                              self.graph, self.init_time, self.final_time)
 
         return info
 
 def main():
-    game = pacman_game(4)
+    game = pacman_game(4, True)
     run = True
     clock = pygame.time.Clock()
     while run:

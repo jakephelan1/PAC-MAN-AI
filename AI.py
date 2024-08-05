@@ -204,7 +204,7 @@ class AI:
                 current_ghost_distances[ghost] = distance
 
                 if ghost in previous_ghost_distances:
-                    if distance > previous_ghost_distances[ghost]:
+                    if distance > previous_ghost_distances[ghost] and not ghost.dead:
                         ghost_avoidance_reward += 0.5
 
             previous_ghost_distances = current_ghost_distances
@@ -339,7 +339,6 @@ class AI:
         ghost_data = [0, 0, 0, 0]
         max_distance = 15
         scaled_ghost_positions = []
-        min_ghost_distance = float('inf')
 
         for ghost_pos in game_info.g_coords.values():
             ghost_x, ghost_y = (ghost_pos[0] // num2) % 30, ghost_pos[1] // num1
@@ -355,10 +354,6 @@ class AI:
             if dy != 0:
                 data = max(0, (max_distance - abs(dy)) / max_distance)
                 ghost_data[2 if dy > 0 else 3] += data
-
-            distance = dx + abs(dy)
-            if distance < min_ghost_distance:
-                min_ghost_distance = distance
 
         max_dir = max(ghost_data)
         if max_dir > 0:
@@ -411,7 +406,7 @@ class AI:
             run = game.handle_events(run)
             game.draw()
             pygame.display.update()
-            if game.game_over:
+            if game.game_over or game.complete_lvl:
                 run = False
                 break
             steps += 1
@@ -440,7 +435,7 @@ class AI:
 
             position_history.add_position(current_position)
 
-        return game.points, steps
+        return game.points, steps, game.lives
 
 def evaluate_genome_safe(genome, config, num_ghosts, power_pellets):
     try:
@@ -508,7 +503,7 @@ def run_neat(config, checkpoint=None):
                                filename=f'Models/network_gen_{p.generation}',
                                node_names=node_names)
 
-    winner = p.run(eval_genomes_wrapper, total_generations)
+    winner = p.run(eval_genomes_wrapper, 76)
 
     print(f"Best overall fitness: {winner.fitness}")
 
@@ -525,5 +520,6 @@ if __name__ == "__main__":
     config = neat.Config(neat.DefaultGenome, neat.DefaultReproduction,
                          neat.DefaultSpeciesSet, neat.DefaultStagnation,
                          config_path)
+    checkpoint = 'Checkpoints/neat-checkpoint-375'
 
-    run_neat(config)
+    run_neat(config, checkpoint)
