@@ -1,4 +1,5 @@
 # NEAT Pac-Man AI
+Created by: [Jake Phelan](https://github.com/jakephelan1)
 
 https://github.com/user-attachments/assets/ab39c9c8-bb98-434a-a55d-c94d40151798
 
