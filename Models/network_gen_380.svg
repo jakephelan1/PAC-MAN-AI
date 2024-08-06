@@ -23,8 +23,8 @@
 <!-- Pellet Right&#45;&gt;Move Left -->
 <g id="edge1" class="edge">
 <title>Pellet Right&#45;&gt;Move Left</title>
-<path fill="none" stroke="red" stroke-width="0.13" d="M485.32,-122.93C481.2,-114.4 474.59,-100.72 468.04,-87.17"/>
-<polygon fill="red" stroke="red" stroke-width="0.13" points="471.36,-86 463.86,-78.52 465.06,-89.04 471.36,-86"/>
+<path fill="none" stroke="green" stroke-width="0.13" d="M485.32,-122.93C481.2,-114.4 474.59,-100.72 468.04,-87.17"/>
+<polygon fill="green" stroke="green" stroke-width="0.13" points="471.36,-85.99 463.85,-78.51 465.05,-89.03 471.36,-85.99"/>
 </g>
 <!-- Pellet Left -->
 <g id="node2" class="node">
@@ -41,8 +41,8 @@
 <!-- Pellet Left&#45;&gt;Move Right -->
 <g id="edge15" class="edge">
 <title>Pellet Left&#45;&gt;Move Right</title>
-<path fill="none" stroke="green" stroke-width="0.2" stroke-dasharray="1,5" d="M972.14,-123.15C950,-115.49 917.99,-102.99 892.5,-87.33 888.46,-84.84 884.41,-82.04 880.47,-79.09"/>
-<polygon fill="green" stroke="green" stroke-width="0.2" points="882.82,-76.49 872.79,-73.07 878.5,-82 882.82,-76.49"/>
+<path fill="none" stroke="red" stroke-width="0.13" d="M972.14,-123.15C950,-115.49 917.99,-102.99 892.5,-87.33 888.46,-84.84 884.41,-82.04 880.47,-79.09"/>
+<polygon fill="red" stroke="red" stroke-width="0.13" points="882.74,-76.43 872.71,-73.01 878.42,-81.93 882.74,-76.43"/>
 </g>
 <!-- Move Up -->
 <g id="node20" class="node">
@@ -53,8 +53,8 @@
 <!-- Pellet Left&#45;&gt;Move Up -->
 <g id="edge16" class="edge">
 <title>Pellet Left&#45;&gt;Move Up</title>
-<path fill="none" stroke="green" stroke-width="0.37" d="M992.43,-122.93C985.66,-113.29 974.28,-97.06 963.62,-81.88"/>
-<polygon fill="green" stroke="green" stroke-width="0.37" points="966.74,-80.23 958.13,-74.05 961.01,-84.25 966.74,-80.23"/>
+<path fill="none" stroke="green" stroke-width="0.45" d="M992.43,-122.93C985.73,-113.38 974.49,-97.36 963.91,-82.3"/>
+<polygon fill="green" stroke="green" stroke-width="0.45" points="966.81,-80.33 958.2,-74.15 961.08,-84.35 966.81,-80.33"/>
 </g>
 <!-- Pellet Up -->
 <g id="node3" class="node">
@@ -65,14 +65,14 @@
 <!-- Pellet Up&#45;&gt;Move Right -->
 <g id="edge17" class="edge">
 <title>Pellet Up&#45;&gt;Move Right</title>
-<path fill="none" stroke="green" stroke-width="0.33" stroke-dasharray="1,5" d="M920.84,-122.93C910.93,-113.02 894.04,-96.16 878.48,-80.61"/>
-<polygon fill="green" stroke="green" stroke-width="0.33" points="881.36,-78.54 871.81,-73.95 876.41,-83.49 881.36,-78.54"/>
+<path fill="none" stroke="red" stroke-width="0.76" stroke-dasharray="1,5" d="M920.84,-122.93C911.1,-113.2 894.65,-96.76 879.33,-81.45"/>
+<polygon fill="red" stroke="red" stroke-width="0.76" points="881.82,-79 872.28,-74.41 876.88,-83.95 881.82,-79"/>
 </g>
 <!-- Pellet Up&#45;&gt;Move Up -->
 <g id="edge2" class="edge">
 <title>Pellet Up&#45;&gt;Move Up</title>
-<path fill="none" stroke="green" stroke-width="0.15" d="M930.3,-122.93C931.03,-114.93 932.19,-102.4 933.36,-89.69"/>
-<polygon fill="green" stroke="green" stroke-width="0.15" points="936.84,-90.04 934.27,-79.76 929.87,-89.39 936.84,-90.04"/>
+<path fill="none" stroke="green" stroke-width="0.16" d="M930.3,-122.93C931.03,-114.93 932.19,-102.4 933.36,-89.69"/>
+<polygon fill="green" stroke="green" stroke-width="0.16" points="936.84,-90.06 934.27,-79.78 929.87,-89.41 936.84,-90.06"/>
 </g>
 <!-- Pellet Down -->
 <g id="node4" class="node">
@@ -83,8 +83,8 @@
 <!-- Pellet Down&#45;&gt;Move Left -->
 <g id="edge20" class="edge">
 <title>Pellet Down&#45;&gt;Move Left</title>
-<path fill="none" stroke="red" stroke-width="0.26" d="M333.14,-122.93C350.45,-111.08 382.29,-89.29 407.99,-71.7"/>
-<polygon fill="red" stroke="red" stroke-width="0.26" points="409.85,-74.67 416.13,-66.13 405.9,-68.89 409.85,-74.67"/>
+<path fill="none" stroke="red" stroke-width="0.39" d="M333.14,-122.93C350.45,-111.08 382.29,-89.29 407.99,-71.7"/>
+<polygon fill="red" stroke="red" stroke-width="0.39" points="409.69,-74.78 415.96,-66.25 405.73,-69.01 409.69,-74.78"/>
 </g>
 <!-- Move Down -->
 <g id="node21" class="node">
@@ -95,8 +95,8 @@
 <!-- Pellet Down&#45;&gt;Move Down -->
 <g id="edge3" class="edge">
 <title>Pellet Down&#45;&gt;Move Down</title>
-<path fill="none" stroke="red" stroke-width="0.11" d="M306.96,-122.93C289.08,-111.5 256.69,-90.8 229.71,-73.56"/>
-<polygon fill="red" stroke="red" stroke-width="0.11" points="231.62,-70.62 221.31,-68.19 227.85,-76.52 231.62,-70.62"/>
+<path fill="none" stroke="red" stroke-width="0.22" stroke-dasharray="1,5" d="M306.96,-122.93C289.08,-111.5 256.69,-90.8 229.71,-73.56"/>
+<polygon fill="red" stroke="red" stroke-width="0.22" points="231.76,-70.71 221.45,-68.27 227.99,-76.61 231.76,-70.71"/>
 </g>
 <!-- Power Pellet Right -->
 <g id="node5" class="node">
@@ -107,8 +107,8 @@
 <!-- Power Pellet Right&#45;&gt;Move Right -->
 <g id="edge10" class="edge">
 <title>Power Pellet Right&#45;&gt;Move Right</title>
-<path fill="none" stroke="red" stroke-width="0.23" d="M686.72,-122.93C712.09,-110.18 760.41,-85.91 796.53,-67.76"/>
-<polygon fill="red" stroke="red" stroke-width="0.23" points="797.76,-71.06 805.12,-63.44 794.62,-64.8 797.76,-71.06"/>
+<path fill="none" stroke="green" stroke-width="0.15" d="M686.72,-122.93C712.09,-110.18 760.41,-85.91 796.53,-67.76"/>
+<polygon fill="green" stroke="green" stroke-width="0.15" points="797.87,-71 805.23,-63.39 794.72,-64.75 797.87,-71"/>
 </g>
 <!-- Power Pellet Left -->
 <g id="node6" class="node">
@@ -119,8 +119,8 @@
 <!-- Power Pellet Left&#45;&gt;Move Down -->
 <g id="edge11" class="edge">
 <title>Power Pellet Left&#45;&gt;Move Down</title>
-<path fill="none" stroke="red" stroke-width="0.34" d="M140.38,-122.93C144.7,-115.26 151.38,-103.41 158.24,-91.24"/>
-<polygon fill="red" stroke="red" stroke-width="0.34" points="161.13,-93.25 162.99,-82.82 155.03,-89.81 161.13,-93.25"/>
+<path fill="none" stroke="green" stroke-width="0.25" d="M140.38,-122.93C144.7,-115.26 151.38,-103.41 158.24,-91.24"/>
+<polygon fill="green" stroke="green" stroke-width="0.25" points="161.2,-93.13 163.06,-82.7 155.1,-89.69 161.2,-93.13"/>
 </g>
 <!-- Power Pellet Up -->
 <g id="node7" class="node">
@@ -131,8 +131,8 @@
 <!-- Power Pellet Up&#45;&gt;Move Left -->
 <g id="edge4" class="edge">
 <title>Power Pellet Up&#45;&gt;Move Left</title>
-<path fill="none" stroke="green" stroke-width="0.23" stroke-dasharray="1,5" d="M409.68,-122.93C413.76,-114.48 420.28,-100.98 426.77,-87.56"/>
-<polygon fill="green" stroke="green" stroke-width="0.23" points="429.88,-89.17 431.08,-78.64 423.58,-86.12 429.88,-89.17"/>
+<path fill="none" stroke="red" stroke-width="0.22" stroke-dasharray="1,5" d="M409.68,-122.93C413.76,-114.48 420.28,-100.98 426.77,-87.56"/>
+<polygon fill="red" stroke="red" stroke-width="0.22" points="429.89,-89.16 431.09,-78.63 423.58,-86.11 429.89,-89.16"/>
 </g>
 <!-- Power Pellet Down -->
 <g id="node8" class="node">
@@ -155,8 +155,8 @@
 <!-- Ghost Info Left&#45;&gt;Move Up -->
 <g id="edge5" class="edge">
 <title>Ghost Info Left&#45;&gt;Move Up</title>
-<path fill="none" stroke="green" stroke-width="0.32" stroke-dasharray="1,5" d="M1064.46,-122.93C1044.14,-110.4 1005.74,-86.73 976.47,-68.69"/>
-<polygon fill="green" stroke="green" stroke-width="0.32" points="978.48,-65.81 968.13,-63.54 974.8,-71.77 978.48,-65.81"/>
+<path fill="none" stroke="red" stroke-width="0.46" stroke-dasharray="1,5" d="M1064.46,-122.93C1044.14,-110.4 1005.74,-86.73 976.47,-68.69"/>
+<polygon fill="red" stroke="red" stroke-width="0.46" points="978.65,-65.92 968.3,-63.65 974.98,-71.88 978.65,-65.92"/>
 </g>
 <!-- Ghost Info Up -->
 <g id="node11" class="node">
@@ -167,8 +167,8 @@
 <!-- Ghost Info Up&#45;&gt;Move Right -->
 <g id="edge6" class="edge">
 <title>Ghost Info Up&#45;&gt;Move Right</title>
-<path fill="none" stroke="red" stroke-width="0.14" stroke-dasharray="1,5" d="M771.36,-122.93C780.02,-113.41 794.52,-97.46 808.17,-82.43"/>
-<polygon fill="red" stroke="red" stroke-width="0.14" points="810.5,-85.07 814.64,-75.32 805.32,-80.36 810.5,-85.07"/>
+<path fill="none" stroke="red" stroke-width="0.28" stroke-dasharray="1,5" d="M771.36,-122.93C779.94,-113.49 794.25,-97.74 807.8,-82.84"/>
+<polygon fill="red" stroke="red" stroke-width="0.28" points="810.36,-85.23 814.49,-75.48 805.18,-80.52 810.36,-85.23"/>
 </g>
 <!-- Ghost Info Down -->
 <g id="node12" class="node">
@@ -179,14 +179,14 @@
 <!-- Ghost Info Down&#45;&gt;Move Left -->
 <g id="edge13" class="edge">
 <title>Ghost Info Down&#45;&gt;Move Left</title>
-<path fill="none" stroke="green" stroke-width="0.2" stroke-dasharray="1,5" d="M253.9,-122.93C288.51,-108.94 357.47,-81.06 403.05,-62.63"/>
-<polygon fill="green" stroke="green" stroke-width="0.2" points="404.17,-65.96 412.12,-58.96 401.54,-59.47 404.17,-65.96"/>
+<path fill="none" stroke="red" stroke-width="0.13" stroke-dasharray="1,5" d="M253.9,-122.93C288.51,-108.94 357.47,-81.06 403.05,-62.63"/>
+<polygon fill="red" stroke="red" stroke-width="0.13" points="404.25,-65.92 412.21,-58.93 401.63,-59.43 404.25,-65.92"/>
 </g>
 <!-- Ghost Info Down&#45;&gt;Move Down -->
 <g id="edge7" class="edge">
 <title>Ghost Info Down&#45;&gt;Move Down</title>
-<path fill="none" stroke="green" stroke-width="0.46" stroke-dasharray="1,5" d="M227.72,-122.93C223.53,-115.33 217.07,-103.64 210.42,-91.59"/>
-<polygon fill="green" stroke="green" stroke-width="0.46" points="213.56,-90.04 205.66,-82.98 207.43,-93.42 213.56,-90.04"/>
+<path fill="none" stroke="green" stroke-width="0.45" stroke-dasharray="1,5" d="M227.72,-122.93C223.53,-115.33 217.07,-103.64 210.42,-91.59"/>
+<polygon fill="green" stroke="green" stroke-width="0.45" points="213.55,-90.03 205.65,-82.97 207.42,-93.41 213.55,-90.03"/>
 </g>
 <!-- PAC&#45;MAN Right -->
 <g id="node13" class="node">
@@ -215,20 +215,20 @@
 <!-- PAC&#45;MAN Up&#45;&gt;Move Right -->
 <g id="edge14" class="edge">
 <title>PAC&#45;MAN Up&#45;&gt;Move Right</title>
-<path fill="none" stroke="red" stroke-width="0.15" d="M850.6,-122.93C849.9,-116.09 848.84,-105.93 847.73,-95.19"/>
-<polygon fill="red" stroke="red" stroke-width="0.15" points="851.24,-95.04 846.72,-85.46 844.27,-95.76 851.24,-95.04"/>
+<path fill="none" stroke="red" stroke-width="0.24" d="M850.6,-122.93C849.9,-116.16 848.87,-106.14 847.77,-95.51"/>
+<polygon fill="red" stroke="red" stroke-width="0.24" points="851.25,-95.18 846.74,-85.59 844.29,-95.9 851.25,-95.18"/>
 </g>
 <!-- PAC&#45;MAN Up&#45;&gt;Move Left -->
 <g id="edge8" class="edge">
 <title>PAC&#45;MAN Up&#45;&gt;Move Left</title>
-<path fill="none" stroke="red" stroke-width="0.32" d="M815.65,-123.86C742.59,-108.15 576.5,-72.42 494.74,-54.83"/>
-<polygon fill="red" stroke="red" stroke-width="0.32" points="495.71,-51.46 485.2,-52.77 494.24,-58.3 495.71,-51.46"/>
+<path fill="none" stroke="green" stroke-width="0.4" d="M815.65,-123.86C742.66,-108.16 576.83,-72.49 494.99,-54.88"/>
+<polygon fill="green" stroke="green" stroke-width="0.4" points="495.84,-51.48 485.32,-52.8 494.36,-58.33 495.84,-51.48"/>
 </g>
 <!-- PAC&#45;MAN Up&#45;&gt;Move Up -->
 <g id="edge18" class="edge">
 <title>PAC&#45;MAN Up&#45;&gt;Move Up</title>
-<path fill="none" stroke="red" stroke-width="0.15" d="M860.06,-122.93C870.69,-112.18 889.43,-93.24 905.81,-76.69"/>
-<polygon fill="red" stroke="red" stroke-width="0.15" points="907.95,-79.51 912.49,-69.94 902.97,-74.58 907.95,-79.51"/>
+<path fill="none" stroke="green" stroke-width="0.1" d="M860.06,-122.93C870.69,-112.18 889.43,-93.24 905.81,-76.69"/>
+<polygon fill="green" stroke="green" stroke-width="0.1" points="908,-79.45 912.55,-69.88 903.02,-74.53 908,-79.45"/>
 </g>
 <!-- PACM&#45;MAN Down -->
 <g id="node16" class="node">
@@ -245,14 +245,14 @@
 <!-- Power&#45;Up Time&#45;&gt;Move Left -->
 <g id="edge9" class="edge">
 <title>Power&#45;Up Time&#45;&gt;Move Left</title>
-<path fill="none" stroke="red" stroke-width="0.37" stroke-dasharray="1,5" d="M560.96,-122.93C543.85,-111.12 512.4,-89.43 486.94,-71.87"/>
-<polygon fill="red" stroke="red" stroke-width="0.37" points="489.24,-69.21 479.03,-66.41 485.27,-74.97 489.24,-69.21"/>
+<path fill="none" stroke="red" stroke-width="0.13" stroke-dasharray="1,5" d="M560.96,-122.93C543.85,-111.12 512.4,-89.43 486.94,-71.87"/>
+<polygon fill="red" stroke="red" stroke-width="0.13" points="488.95,-69 478.73,-66.21 484.98,-74.77 488.95,-69"/>
 </g>
 <!-- Power&#45;Up Time&#45;&gt;Move Up -->
 <g id="edge19" class="edge">
 <title>Power&#45;Up Time&#45;&gt;Move Up</title>
-<path fill="none" stroke="green" stroke-width="0.25" d="M610.63,-124.76C613.63,-124.26 616.61,-123.78 619.5,-123.33 740.87,-104.48 782.92,-140.79 893.5,-87.33 898.41,-84.95 903.12,-81.82 907.51,-78.33"/>
-<polygon fill="green" stroke="green" stroke-width="0.25" points="909.54,-81.2 914.76,-71.98 904.93,-75.93 909.54,-81.2"/>
+<path fill="none" stroke="green" stroke-width="0.34" d="M610.63,-124.76C613.63,-124.26 616.61,-123.78 619.5,-123.33 740.87,-104.48 782.92,-140.79 893.5,-87.33 898.29,-85.01 902.88,-81.98 907.18,-78.59"/>
+<polygon fill="green" stroke="green" stroke-width="0.34" points="909.41,-81.29 914.64,-72.08 904.81,-76.01 909.41,-81.29"/>
 </g>
 </g>
 </svg>

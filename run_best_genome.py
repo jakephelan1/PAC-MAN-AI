@@ -15,11 +15,14 @@ def run_game_with_genome(genome, config):
     game = pacman_game(num_ghosts=4, power_pellets=True)
     ai_tester = AI()
 
-    final_score, steps = ai_tester.run_pacman(net, game)
+    final_score, steps, lives = ai_tester.run_pacman(net, game)
 
     pygame.quit()
     print(f"Final Score: {final_score}")
     print(f"Steps taken: {steps}")
+    print(f"Lives remaining: {lives}")
 
-genome, config = load_genome("overall_best_genome.pkl")
-run_game_with_genome(genome, config)
+def main():
+    genome, config = load_genome("overall_best_genome.pkl")
+    run_game_with_genome(genome, config)
+

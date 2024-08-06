@@ -503,7 +503,7 @@ def run_neat(config, checkpoint=None):
                                filename=f'Models/network_gen_{p.generation}',
                                node_names=node_names)
 
-    winner = p.run(eval_genomes_wrapper, 76)
+    winner = p.run(eval_genomes_wrapper, 71)
 
     print(f"Best overall fitness: {winner.fitness}")
 
@@ -520,6 +520,6 @@ if __name__ == "__main__":
     config = neat.Config(neat.DefaultGenome, neat.DefaultReproduction,
                          neat.DefaultSpeciesSet, neat.DefaultStagnation,
                          config_path)
-    checkpoint = 'Checkpoints/neat-checkpoint-375'
+    checkpoint = 'Checkpoints/neat-checkpoint-380'
 
     run_neat(config, checkpoint)
