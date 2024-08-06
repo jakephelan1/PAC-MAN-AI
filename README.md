@@ -50,6 +50,7 @@ This project implements an AI agent that learns to play Pac-Man using the NEAT (
 
 - `AI.py`: Main script for training the NEAT algorithm
 - `game.py`: Pac-Man game logic and rendering
+- `board.py`: Board for the game with and without power pellets
 - `visualize.py`: Functions for visualizing networks and statistics
 - `ghost.py`: Ghost class implementation
 - `player.py`: Pac-Man player class implementation
