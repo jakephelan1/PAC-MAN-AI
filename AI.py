@@ -222,7 +222,9 @@ class AI:
             fitness = 4000 + (2000 * game.lives)
 
         # Don't add ghost_avoidance_reward after power pellets are added!
-        final_fitness = fitness if cleared_points else (base_fitness * ghost_factor) + diversity_bonus - empty_space_penalty - life_penalty
+        # Also used fitness variable created above after power pellets are added if the points are cleared to heavily reward cleared 
+        # boards and stop training early if board is cleared with 3 lives remaining
+        final_fitness = (base_fitness * ghost_factor) + diversity_bonus + ghost_avoidance_reward - empty_space_penalty - life_penalty
 
         return max(final_fitness, 0.01)
 
@@ -503,7 +505,7 @@ def run_neat(config, checkpoint=None):
                                filename=f'Models/network_gen_{p.generation}',
                                node_names=node_names)
 
-    winner = p.run(eval_genomes_wrapper, 71)
+    winner = p.run(eval_genomes_wrapper, total_generations)
 
     print(f"Best overall fitness: {winner.fitness}")
 
@@ -520,6 +522,5 @@ if __name__ == "__main__":
     config = neat.Config(neat.DefaultGenome, neat.DefaultReproduction,
                          neat.DefaultSpeciesSet, neat.DefaultStagnation,
                          config_path)
-    checkpoint = 'Checkpoints/neat-checkpoint-380'
 
-    run_neat(config, checkpoint)
+    run_neat(config)
