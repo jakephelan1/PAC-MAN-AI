@@ -22,7 +22,6 @@ def run_game_with_genome(genome, config):
     print(f"Steps taken: {steps}")
     print(f"Lives remaining: {lives}")
 
-def main():
-    genome, config = load_genome("overall_best_genome.pkl")
-    run_game_with_genome(genome, config)
+genome, config = load_genome("overall_best_genome.pkl")
+run_game_with_genome(genome, config)
 
