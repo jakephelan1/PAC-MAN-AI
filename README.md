@@ -27,8 +27,8 @@ This project implements an AI agent that learns to play Pac-Man using the NEAT (
 
 1. Clone the Repository
    ```
-   git clone [Your Repository URL]
-   cd [Your Repository Name]
+   git clone https://github.com/jakephelan1/PAC-MAN-AI
+   cd PAC-MAN-AI
    ```
 
 2. Install Dependencies
